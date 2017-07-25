@@ -1,0 +1,11 @@
+{
+  "type": "privileged",
+  "permissions": {
+    "audio-capture" : {
+      "description" : "Audio capture"
+    },
+    "speech-recognition" : {
+      "description" : "Speech recognition"
+    }
+  }
+}

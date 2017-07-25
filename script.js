@@ -19,7 +19,6 @@ recognition.onresult = function(e) {
   let last = e.results.length - 1;
   let word = e.results[last][0].transcript;
 
-  // console.log(diagnostic.textContent);
   console.log('results: ', event.results)
   console.log('result: ', word);
   console.log('Confidence: ' + e.results[0][0].confidence);
@@ -31,9 +30,17 @@ recognition.onspeechend = function() {
 }
 
 recognition.onnomatch = function(e) {
-  diagnostic.textContent = "I didn't recognise that color.";
+  diagnostic.textContent = "I didn't recognise that word.";
 }
 
 recognition.onerror = function(e) {
   diagnostic.textContent = 'Error occurred in recognition: ' + e.error;
+}
+
+recognition.onspeechstart = function(e) {
+  console.log('speech is happening!');
+}
+
+recognition.onspeechend = function(e) {
+  console.log('speech is done');
 }
